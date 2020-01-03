@@ -19,7 +19,7 @@
         <tk.mybatis>2.0.3</tk.mybatis>
         <github.pagehelper>1.2.10</github.pagehelper>
         <alibaba.druid>1.0.25</alibaba.druid>
-        <spring-security-core>4.2.11.RELEASE</spring-security-core>
+        <spring-security-core>5.0.0.RELEASE</spring-security-core>
     </properties>
 
 
