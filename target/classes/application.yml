@@ -1,0 +1,50 @@
+server:
+  port: 8110
+context-path: /BootInterceptor
+spring:
+  application:
+    name:
+  jackson:
+    serialization:
+      indent_output: true
+  messages:
+    basename: i18n/messages
+  mvc:
+    favicon:
+      enabled: false
+  thymeleaf:
+    mode: XHTML
+    prefix: classpath:/templates/
+  devtools:
+    restart:
+      enabled: true
+logging:
+  level:
+    xatu.zsl: debug
+    org.springfromework.web: debug
+  file: D:\\netmarch\\web.log
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+    log-impl: com.netmarch.web.common.mybatis.MyBatisLogs
+  mapper-locations: classpath:mapper/*/*.xml
+  typeAliasesPackage: com.netmarch.web.*.bean
+jdbc:
+  #url: jdbc:mysql://172.16.0.31:3306/zfpt_qhgaj?characterEncoding=UTF-8&zeroDateTimeBehavior=round&useSSL=false
+  #username: root
+  #password: netmarch
+  url: jdbc:mysql://172.16.1.199:3306/zfpt_qhgaj?characterEncoding=UTF-8&zeroDateTimeBehavior=round&useSSL=false
+  username: root
+  password: netmarch
+  driverClassName: com.mysql.jdbc.Driver
+jdbc1:
+  url: jdbc:mysql://172.16.1.199:3306/zfpt_qhgaj?characterEncoding=UTF-8&zeroDateTimeBehavior=round&useSSL=false
+  username: root
+  password: netmarch
+  driverClassName: com.mysql.jdbc.Driver
+ojdbc:
+  url: jdbc:oracle:thin:@localhost:1521:orcl
+  username: gdy
+  password: 000
+  driverClassName: oracle.jdbc.driver.OracleDriver
+

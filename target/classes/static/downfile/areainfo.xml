@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DATA>
+  <!--区域基本信息-->
+  <AREALIST>
+    <AREA>
+	  <AREA_CODE>320321</AREA_CODE>
+      <GAJ_AREA_NAME>XXX公安局</GAJ_AREA_NAME>
+      <JCY_AREA_NAME>XXX人民检察院</JCY_AREA_NAME>
+      <FY_AREA_NAME>XXX人民法院</FY_AREA_NAME>
+      <SFJ_AREA_NAME>XXX司法局</SFJ_AREA_NAME>
+      <ZFW_AREA_NAME>政法委</ZFW_AREA_NAME>
+    </AREA>
+  </AREALIST>
+</DATA>
+

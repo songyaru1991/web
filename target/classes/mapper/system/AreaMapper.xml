@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netmarch.web.system.mapper.AreaMapper">
+
+  <select id="getAreaList" parameterType="com.netmarch.web.system.bean.Query"
+          resultType="com.netmarch.web.system.bean.Area">
+    Select  iD id,  area_Code areaCode,  gAJ_Area_Name gajAreaName,  jCY_Area_Name jcyAreaName,  fY_Area_Name fyAreaName,
+    sFJ_Area_Name sfjAreaName,  zFW_Area_Name zfwAreaName
+    from AREA
+    where 1=1
+      <if test="searchCondition != '' and searchCondition != null and searchContent != '' and searchContent != null">
+          <if test='searchCondition == "searchName"'>
+              and(  gAJ_Area_Name like '%${searchContent}%' or
+              jCY_Area_Name like '%${searchContent}%'or fY_Area_Name like '%${searchContent}%'
+              or sFJ_Area_Name like '%${searchContent}%' or zFW_Area_Name like '%${searchContent}%')
+          </if>
+          <if test='searchCondition == "searchAreaCode"'>
+              and area_code like  CONCAT('%',#{searchContent,jdbcType=VARCHAR},'%')
+          </if>
+      </if>
+    order by ID Desc
+  </select>
+
+  <select id="getArea" resultType="com.netmarch.web.system.bean.Area">
+    select
+    id,  area_Code areaCode,  gAJ_Area_Name gajAreaName,  jCY_Area_Name jcyAreaName,  fY_Area_Name fyAreaName,
+    sFJ_Area_Name sfjAreaName,  zFW_Area_Name zfwAreaName
+    from area
+  </select>
+
+  <select id="getAreaById" parameterType="String" resultType="com.netmarch.web.system.bean.Area">
+    select
+     id,area_Code areaCode,  gAJ_Area_Name gajAreaName,  jCY_Area_Name jcyAreaName,  fY_Area_Name fyAreaName,
+    sFJ_Area_Name sfjAreaName,  zFW_Area_Name zfwAreaName
+    from area
+    <if test="_parameter != '' and _parameter != null">
+      where ID = #{id,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+  <insert id="addArea"
+          parameterType="com.netmarch.web.system.bean.Area">
+       insert into area (ID, AREA_CODE,  GAJ_AREA_NAME,
+      JCY_AREA_NAME, FY_AREA_NAME, SFJ_AREA_NAME,
+      ZFW_AREA_NAME)
+    values (#{id,jdbcType=VARCHAR}, #{areaCode,jdbcType=VARCHAR}, #{gajAreaName,jdbcType=VARCHAR},
+      #{jcyAreaName,jdbcType=VARCHAR}, #{fyAreaName,jdbcType=VARCHAR}, #{sfjAreaName,jdbcType=VARCHAR},
+      #{zfwAreaName,jdbcType=VARCHAR})
+    </insert>
+
+  <update id="editArea"
+          parameterType="com.netmarch.web.system.bean.Area">
+       update area
+      set GAJ_AREA_NAME = #{gajAreaName,jdbcType=VARCHAR},
+      AREA_CODE = #{areaCode,jdbcType=VARCHAR},
+      JCY_AREA_NAME = #{jcyAreaName,jdbcType=VARCHAR},
+      FY_AREA_NAME = #{fyAreaName,jdbcType=VARCHAR},
+      SFJ_AREA_NAME = #{sfjAreaName,jdbcType=VARCHAR},
+      ZFW_AREA_NAME = #{zfwAreaName,jdbcType=VARCHAR}
+       where ID = #{id,jdbcType=VARCHAR}
+   </update>
+
+    <update id="updateAreaByAreaCode"
+            parameterType="com.netmarch.web.system.bean.Area">
+       update area
+      set GAJ_AREA_NAME = #{gajAreaName,jdbcType=VARCHAR},
+      AREA_CODE = #{areaCode,jdbcType=VARCHAR},
+      JCY_AREA_NAME = #{jcyAreaName,jdbcType=VARCHAR},
+      FY_AREA_NAME = #{fyAreaName,jdbcType=VARCHAR},
+      SFJ_AREA_NAME = #{sfjAreaName,jdbcType=VARCHAR},
+      ZFW_AREA_NAME = #{zfwAreaName,jdbcType=VARCHAR}
+       where area_code = #{areaCode,jdbcType=VARCHAR}
+   </update>
+
+  <delete id="delBatch" parameterType="List">
+    delete from area where ID in
+    <foreach collection="list" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </delete>
+
+    <select id="checkRepeatAreaCode"
+            parameterType="com.netmarch.web.system.bean.Area"
+            resultType="int">
+        select count(1) from Area where area_code = #{areaCode}
+        <if test="id !=null">
+            and id &lt;&gt; #{id}
+        </if>
+    </select>
+
+</mapper>

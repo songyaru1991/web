@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:auth="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link rel="stylesheet" th:href="@{/css/style05.css}">
+    <link rel="stylesheet" th:href="@{/js/layui/css/layui.admin.css}">
+    <link rel="stylesheet" th:href="@{/js/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/layui/layui.js}"></script>
+    <script th:src="@{/js/main_05.js}"></script>
+    <script th:src="@{/js/util.js}"></script>
+    <!--[if lt IE 9]>
+    <script th:src="@{/js/forIE8.js}"></script>
+    <![endif]-->
+    <script th:src="@{/js/jquery.backgroundSize.js}"></script>
+
+</head>
+<body>
+<div class="H105_content clear ">
+    <div class="H105_leftBody">
+        <div class="H105_menu">
+            <ul class="I106_navList clear">
+                <li>
+                    <div class="I106_navItem  I106_navItemCurrent ">
+                        <span class="I106_navIcon I106_navIcon1"></span>
+                        <span>系统配置</span>
+                        <span class="I106_arrow I106_arrowCurrent"></span>
+                    </div>
+
+                    <ul class="I106_subNavList" style="display: block;">
+                        <li  lay-href="../area/list" data-content="组织机构管理" class="I106_subNavItemCurrent" >
+                            <span class="I106_subNavItem">组织机构管理</span>
+                           
+                        </li>
+                      
+                     <!--   <li  lay-href="http://127.0.0.1:8023/main.html"  data-content="网络拓扑管理">
+                            <span class="I106_subNavItem">网络拓扑管理</span>
+                          
+                        </li>
+                          <li  lay-href="http://172.16.1.199:8001/xtsz/WorkFlow/WORKFLOWSet.aspx" data-content="业务流程管理">
+                            <span class="I106_subNavItem">业务流程管理</span>
+                          
+                        </li>
+                         <li  lay-href="./property_second/shujuyuanManage.html" data-content="元数据管理">
+                            <span class="I106_subNavItem">元数据管理</span>
+                           
+                        </li>
+                           <li  lay-href="./property_second/shujuxiaoyan.html" data-content="数据校验配置">
+                            <span class="I106_subNavItem">数据校验配置</span>
+                           
+                        </li>
+                        <li  lay-href="./property_second3.html" data-content="模板管理">
+                            <span class="I106_subNavItem">模板管理</span>
+                           
+                        </li>
+                        <li  lay-href="./property_second3.html" data-content="协同页面配置">
+                            <span class="I106_subNavItem">协同页面配置</span>
+                           
+                        </li>
+                      -->
+                       
+                    </ul>
+                </li>
+
+            <!--    <li>
+                    <div class="I106_navItem">
+                        <span class="I106_navIcon I106_navIcon2"></span>
+                        <span>网络资源管理</span>
+                        <span class="I106_arrow"></span>
+                    </div>
+                    <ul class="I106_subNavList"  >
+                        <li lay-href="./property_second/webservicemanage.html" data-content="Webservice配置">
+                            <span class="I106_subNavItem" > Webservice配置 </span>                        
+                        </li>                      
+                        <li lay-href="./property_second/FTPmanage.html">
+                            <span class="I106_subNavItem">FTP配置</span>                          
+                        </li>
+                         <li lay-href="./property_second/dingshirenwuManage.html">
+                            <span class="I106_subNavItem">定时任务配置</span>                          
+                        </li>
+                         <li lay-href="./property_second/httpMange.html">
+                            <span class="I106_subNavItem">Http 配置</span>                          
+                        </li>
+                          <li lay-href="./property_second/localFileMange.html">
+                            <span class="I106_subNavItem">本地文件配置 </span>                       
+                        </li>
+
+                    </ul>
+                </li>-->
+
+            </ul>
+        </div>
+    </div>
+
+    <iframe class="H105_iframeright " id="frm" frameborder="0" src="./area/list"></iframe>
+
+
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

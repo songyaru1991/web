@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netmarch.web.system.mapper.YmpzeditMapper">
+  <resultMap id="BaseResultMap" type="com.netmarch.web.system.bean.Ympzedit">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="xyr" jdbcType="VARCHAR" property="xyr" />
+    <result column="ajzt" jdbcType="VARCHAR" property="ajzt" />
+    <result column="ajmc" jdbcType="VARCHAR" property="ajmc" />
+    <result column="scsj" jdbcType="VARCHAR" property="scsj" />
+    <result column="yssj" jdbcType="VARCHAR" property="yssj" />
+    <result column="sdsj" jdbcType="VARCHAR" property="sdsj" />
+    <result column="ajbh" jdbcType="VARCHAR" property="ajbh" />
+    <result column="ajlb" jdbcType="VARCHAR" property="ajlb" />
+    <result column="ysdw" jdbcType="VARCHAR" property="ysdw" />
+    <result column="sfdbaj" jdbcType="VARCHAR" property="sfdbaj" />
+    <result column="zxhdmc" jdbcType="VARCHAR" property="zxhdmc" />
+    <result column="gtfzxz" jdbcType="VARCHAR" property="gtfzxz" />
+    <result column="zay" jdbcType="VARCHAR" property="zay" />
+    <result column="gawswh" jdbcType="VARCHAR" property="gawswh" />
+    <result column="badw" jdbcType="VARCHAR" property="badw" />
+    <result column="cbr" jdbcType="VARCHAR" property="cbr" />
+  </resultMap>
+  <insert id="insert" parameterType="com.netmarch.web.system.bean.Ympzedit">
+    insert into ympzedit (id, xyr, ajzt, 
+      ajmc, scsj, yssj, sdsj, 
+      ajbh, ajlb, ysdw, sfdbaj, 
+      zxhdmc, gtfzxz, zay, 
+      gawswh, badw, cbr)
+    values (#{id,jdbcType=VARCHAR}, #{xyr,jdbcType=VARCHAR}, #{ajzt,jdbcType=VARCHAR}, 
+      #{ajmc,jdbcType=VARCHAR}, #{scsj,jdbcType=VARCHAR}, #{yssj,jdbcType=VARCHAR}, #{sdsj,jdbcType=VARCHAR}, 
+      #{ajbh,jdbcType=VARCHAR}, #{ajlb,jdbcType=VARCHAR}, #{ysdw,jdbcType=VARCHAR}, #{sfdbaj,jdbcType=VARCHAR}, 
+      #{zxhdmc,jdbcType=VARCHAR}, #{gtfzxz,jdbcType=VARCHAR}, #{zay,jdbcType=VARCHAR}, 
+      #{gawswh,jdbcType=VARCHAR}, #{badw,jdbcType=VARCHAR}, #{cbr,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.netmarch.web.system.bean.Ympzedit">
+    insert into ympzedit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="xyr != null">
+        xyr,
+      </if>
+      <if test="ajzt != null">
+        ajzt,
+      </if>
+      <if test="ajmc != null">
+        ajmc,
+      </if>
+      <if test="scsj != null">
+        scsj,
+      </if>
+      <if test="yssj != null">
+        yssj,
+      </if>
+      <if test="sdsj != null">
+        sdsj,
+      </if>
+      <if test="ajbh != null">
+        ajbh,
+      </if>
+      <if test="ajlb != null">
+        ajlb,
+      </if>
+      <if test="ysdw != null">
+        ysdw,
+      </if>
+      <if test="sfdbaj != null">
+        sfdbaj,
+      </if>
+      <if test="zxhdmc != null">
+        zxhdmc,
+      </if>
+      <if test="gtfzxz != null">
+        gtfzxz,
+      </if>
+      <if test="zay != null">
+        zay,
+      </if>
+      <if test="gawswh != null">
+        gawswh,
+      </if>
+      <if test="badw != null">
+        badw,
+      </if>
+      <if test="cbr != null">
+        cbr,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="xyr != null">
+        #{xyr,jdbcType=VARCHAR},
+      </if>
+      <if test="ajzt != null">
+        #{ajzt,jdbcType=VARCHAR},
+      </if>
+      <if test="ajmc != null">
+        #{ajmc,jdbcType=VARCHAR},
+      </if>
+      <if test="scsj != null">
+        #{scsj,jdbcType=VARCHAR},
+      </if>
+      <if test="yssj != null">
+        #{yssj,jdbcType=VARCHAR},
+      </if>
+      <if test="sdsj != null">
+        #{sdsj,jdbcType=VARCHAR},
+      </if>
+      <if test="ajbh != null">
+        #{ajbh,jdbcType=VARCHAR},
+      </if>
+      <if test="ajlb != null">
+        #{ajlb,jdbcType=VARCHAR},
+      </if>
+      <if test="ysdw != null">
+        #{ysdw,jdbcType=VARCHAR},
+      </if>
+      <if test="sfdbaj != null">
+        #{sfdbaj,jdbcType=VARCHAR},
+      </if>
+      <if test="zxhdmc != null">
+        #{zxhdmc,jdbcType=VARCHAR},
+      </if>
+      <if test="gtfzxz != null">
+        #{gtfzxz,jdbcType=VARCHAR},
+      </if>
+      <if test="zay != null">
+        #{zay,jdbcType=VARCHAR},
+      </if>
+      <if test="gawswh != null">
+        #{gawswh,jdbcType=VARCHAR},
+      </if>
+      <if test="badw != null">
+        #{badw,jdbcType=VARCHAR},
+      </if>
+      <if test="cbr != null">
+        #{cbr,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="editYmpz" parameterType="com.netmarch.web.system.bean.Ympzedit">
+    update ympzedit set xyr = #{xyr,jdbcType=VARCHAR}, ajzt = #{ajzt,jdbcType=VARCHAR},ajbh=#{ajbh,jdbcType=VARCHAR},
+    ajmc = #{ajmc,jdbcType=VARCHAR},yssj = #{yssj,jdbcType=VARCHAR},scsj = #{scsj,jdbcType=VARCHAR},
+    sdsj = #{sdsj,jdbcType=VARCHAR},ajlb = #{ajlb,jdbcType=VARCHAR},ysdw = #{ysdw,jdbcType=VARCHAR},
+    sfdbaj = #{sfdbaj,jdbcType=VARCHAR},
+    zxhdmc =#{zxhdmc,jdbcType=VARCHAR},gtfzxz = #{gtfzxz,jdbcType=VARCHAR}, zay = #{zay,jdbcType=VARCHAR},
+    gawswh = #{gawswh,jdbcType=VARCHAR}, badw = #{badw,jdbcType=VARCHAR}, cbr = #{cbr,jdbcType=VARCHAR}
+    where id ='1'
+  </update>
+
+  <select id="getEditYmpzById" parameterType="java.lang.String" resultType="com.netmarch.web.system.bean.Ympzedit">
+    select * from ympzedit where id= '1'
+  </select>
+</mapper>

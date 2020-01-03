@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.netmarch.web.WebApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.355 s - in com.netmarch.web.WebApplicationTests

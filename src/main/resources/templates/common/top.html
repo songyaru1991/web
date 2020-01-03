@@ -1,0 +1,25 @@
+<div th:fragment="top" xmlns:th="http://schemas.xmlsoap.org/wsdl/" >
+    <!--头部s-->
+    <div class="I106_topOuter">
+        <div class="I106_top">
+            <div class="I106_topLeft">
+                <img th:src="@{/images/logo.png}" alt="">
+                <span>网进政法协同配置平台</span>
+            </div>
+            <div class="I106_topRight">
+                <div class="I106_topButton" onclick="toIndex()">首页</div>
+                <div class="I106_topButton" onclick="javascript :history.back(-1);">返回</div>
+                <div class="I106_user">
+                    <show:pub type="USERNAME"/>
+                    <img th:src="@{/images/arrowDown.png}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--头部e-->
+    <script>
+        function toIndex(){
+            location.href = "/main";
+        }
+    </script>
+</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>网进政法协同配置平台</title>
+    <link rel="stylesheet" th:href="@{css/all.css}">
+    <link rel="stylesheet" th:href="@{js/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <script th:src="@{js/jquery.min.js}"></script>
+    <script th:src="@{js/jquery.cookie.min.js}"></script>
+    <script th:src="@{js/layui/layui.js}"></script>
+    <script th:src="@{js/main.js}"></script>
+    <script th:src="@{js/util.js}"></script>
+</head>
+<body>
+<form action="" id="form" class="layui-form I206_form">
+    <div class="L106_page">
+        <div class="L106_title">
+            <img th:src="@{images/L106_title.png}" alt="">
+        </div>
+        <div class="L106_logo">
+            <img th:src="@{images/L106_logo.png}" alt="">
+        </div>
+        <div class="L106_login">
+            <div class="L106_loginTitle">用户登录</div>
+            <div class="L106_loginInput">
+                <img th:src="@{images/L106_icon1.png}" alt="">
+                <input class="layui-input" id="loginName" required lay-verify="required"  name="loginName" type="text" placeholder="用户名">
+            </div>
+            <div class="L106_loginInput">
+                <img th:src="@{images/L106_icon2.png}" alt="">
+                <input class="layui-input" id="password" required lay-verify="required"  name="password" type="password" placeholder="密码">
+            </div>
+            <input type="hidden" value="Web" name="mode"/>
+            <div class="L106_remember">
+                <input id="record_password"  lay-filter="record_password"  type="checkbox" lay-skin="primary">
+                <span>记住密码</span>
+            </div>
+            <div id="login_btn" class="L106_loginBtn" lay-submit lay-filter="login" >登 录</div>
+        </div>
+    </div>
+</form>
+</body>
+<script type="text/javascript">
+    layui.use(['form','layer','jquery'], function () {
+        // 操作对象
+        var form = layui.form;
+        var $ = layui.jquery;
+        var isNeedLogin = true;
+        var recordPwdCookieName = "record_password";
+        form.on('submit(login)',function (data) {
+            // debugger
+            $.ajax({
+                url:getContextPath()+'/login?i='+Number(new Date()),
+                data:$("#form").serialize(),
+                dataType:'json',//返回类型
+                type:'post',
+                success:function (data) {
+                    if(data.code == 200){
+                        location.href = data.nextUrl;
+                    }else{
+                        layer.alert(data.message);
+                        return;
+                    }
+
+                }
+            });
+        });
+
+    });
+</script>
+</html>
